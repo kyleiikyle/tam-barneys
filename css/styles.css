@@ -444,30 +444,12 @@ section {
 }
 
 .cat-panel {
-  position: relative;
   min-height: 420px;
-  border-radius: var(--radius);
-  background:
-    radial-gradient(circle at 50% 40%, #3a2418, #120b08 70%);
-  border: 1px solid var(--line);
-  display: grid;
-  place-items: center;
-  overflow: hidden;
 }
 
-.cat-panel svg {
-  width: min(280px, 70%);
-  height: auto;
-  opacity: 0.92;
-}
-
-.cat-panel span {
-  position: absolute;
-  bottom: 1.2rem;
-  color: var(--gold);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
+.cat-panel img {
+  min-height: 420px;
+  object-position: center 30%;
 }
 
 .town {
