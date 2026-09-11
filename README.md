@@ -2,6 +2,10 @@
 
 A static website for Tam Barney's (the Bus Bar) at 75 Newry Street, Banbridge, County Down.
 
+## Live site
+
+Once GitHub Pages is enabled, this site is served from the repository root on the `main` branch.
+
 ## Open locally
 
 ```bash
