@@ -268,7 +268,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 70%;
+  object-position: center 82%;
 }
 
 .hero-media::after {
@@ -363,6 +363,15 @@ section {
   transition: transform 0.6s ease;
 }
 
+.photo-frame.portrait img {
+  min-height: 420px;
+  object-position: center 70%;
+}
+
+.photo-frame.compact img {
+  min-height: 220px;
+}
+
 .photo-frame:hover img {
   transform: scale(1.03);
 }
@@ -425,6 +434,10 @@ section {
   gap: 1rem;
 }
 
+.split-media-3 {
+  grid-template-columns: 1.1fr 0.95fr 0.95fr;
+}
+
 .split-media .photo-frame img {
   min-height: 280px;
 }
@@ -444,12 +457,30 @@ section {
 }
 
 .cat-panel {
+  position: relative;
   min-height: 420px;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 50% 40%, #3a2418, #120b08 70%);
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
 }
 
-.cat-panel img {
-  min-height: 420px;
-  object-position: center 30%;
+.cat-panel svg {
+  width: min(280px, 70%);
+  height: auto;
+  opacity: 0.92;
+}
+
+.cat-panel span {
+  position: absolute;
+  bottom: 1.2rem;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
 }
 
 .town {
@@ -618,6 +649,7 @@ section {
   .town-grid,
   .card-row,
   .split-media,
+  .split-media-3,
   .review-grid,
   .visit-grid,
   .footer-grid {

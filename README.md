@@ -19,4 +19,5 @@ Then visit `http://localhost:4173`.
 ## Notes
 
 - Opening hours are taken from recent public listings and can change. The live “Open now” badge uses Europe/London time.
-- The Cut photograph is credited in the footer.
+- Photographs of the bar are of Tam Barney's.
+- The historic Cut photograph is from the National Library of Ireland.
