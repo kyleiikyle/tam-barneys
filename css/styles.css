@@ -456,13 +456,9 @@ section {
   font-size: 1.2rem;
 }
 
-.cat-panel {
+.photo-frame.cat-panel img {
   min-height: 420px;
-}
-
-.cat-panel img {
-  min-height: 420px;
-  object-position: center 45%;
+  object-position: center 40%;
 }
 
 .town {
