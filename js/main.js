@@ -1,17 +1,17 @@
 (() => {
   const nav = document.getElementById("site-nav");
   const toggle = document.querySelector(".menu-toggle");
-  const statusNodes = document.querySelectorAll("[data-open-status]");
-  const hoursItems = document.querySelectorAll("[data-hours-list] tr");
+  const status = document.querySelector("[data-open-status]");
+  const hoursItems = document.querySelectorAll("[data-hours-list] li");
 
   const hours = {
-    0: { open: 12 * 60, close: 22 * 60, label: "12:00 – 22:00" },
+    0: { open: 12 * 60, close: 22 * 60 },
     1: null,
-    2: { open: 14 * 60, close: 22 * 60, label: "14:00 – 22:00" },
-    3: { open: 14 * 60, close: 22 * 60, label: "14:00 – 22:00" },
-    4: { open: 17 * 60, close: 22 * 60, label: "17:00 – 22:00" },
-    5: { open: 12 * 60, close: 23 * 60 + 30, label: "12:00 – 23:30" },
-    6: { open: 11 * 60 + 30, close: 24 * 60, label: "11:30 – 00:00" }
+    2: { open: 14 * 60, close: 22 * 60 },
+    3: { open: 14 * 60, close: 22 * 60 },
+    4: { open: 17 * 60, close: 22 * 60 },
+    5: { open: 12 * 60, close: 23 * 60 + 30 },
+    6: { open: 11 * 60 + 30, close: 24 * 60 }
   };
 
   function nowInBanbridge() {
@@ -35,18 +35,18 @@
   }
 
   function updateOpenStatus() {
+    if (!status) return;
+
     const { day, minutes } = nowInBanbridge();
     const today = hours[day];
     const open = Boolean(today && minutes >= today.open && minutes < today.close);
 
-    statusNodes.forEach((node) => {
-      node.classList.toggle("is-open", open);
-      node.classList.toggle("is-closed", !open);
-      node.textContent = open ? "In service" : "Not in service";
-    });
+    status.classList.toggle("is-open", open);
+    status.classList.toggle("is-closed", !open);
+    status.textContent = open ? "Open now" : "Closed now";
 
-    hoursItems.forEach((row) => {
-      row.classList.toggle("is-today", Number(row.dataset.day) === day);
+    hoursItems.forEach((item) => {
+      item.classList.toggle("is-today", Number(item.dataset.day) === day);
     });
   }
 
