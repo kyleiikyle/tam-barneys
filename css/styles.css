@@ -268,7 +268,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 82%;
+  object-position: center 70%;
 }
 
 .hero-media::after {
@@ -363,15 +363,6 @@ section {
   transition: transform 0.6s ease;
 }
 
-.photo-frame.portrait img {
-  min-height: 420px;
-  object-position: center 70%;
-}
-
-.photo-frame.compact img {
-  min-height: 220px;
-}
-
 .photo-frame:hover img {
   transform: scale(1.03);
 }
@@ -432,10 +423,6 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-}
-
-.split-media-3 {
-  grid-template-columns: 1.1fr 0.95fr 0.95fr;
 }
 
 .split-media .photo-frame img {
@@ -649,7 +636,6 @@ section {
   .town-grid,
   .card-row,
   .split-media,
-  .split-media-3,
   .review-grid,
   .visit-grid,
   .footer-grid {
